@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Little Sorry 💗</title>
+<style>
+  :root { --pink:#ff5f91; --rose:#ffb6cc; --ink:#65334b; --cream:#fff8fb; }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; min-height:100vh; font-family:"Trebuchet MS",Arial,sans-serif; color:var(--ink);
+    background:radial-gradient(circle at 20% 10%,#ffe0ec 0,transparent 32%),
+               radial-gradient(circle at 85% 85%,#ffd6e4 0,transparent 30%),#fff7fa;
+    overflow-x:hidden;
+  }
+  .floaties { position:fixed; inset:0; pointer-events:none; overflow:hidden; z-index:0; }
+  .floaties span { position:absolute; bottom:-50px; font-size:clamp(18px,3vw,30px); opacity:.5; animation:floatUp linear infinite; }
+  @keyframes floatUp { to { transform:translateY(-115vh) rotate(25deg); opacity:0; } }
+  main { position:relative; z-index:1; width:min(900px,92%); margin:0 auto; padding:34px 0 60px; }
+  .hero { text-align:center; padding:42px 22px 30px; border:1px solid #ffd0df; border-radius:30px;
+    background:rgba(255,255,255,.78); box-shadow:0 18px 55px #d76c9120; }
+  .eyebrow { display:inline-block; padding:7px 13px; border-radius:999px; background:#ffe3ed; color:#b63d69; font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; }
+  h1 { font-size:clamp(2.5rem,8vw,5rem); line-height:1.02; margin:20px 0 14px; color:#d94378; }
+  .subtitle { max-width:600px; margin:0 auto; font-size:1.1rem; line-height:1.8; }
+  .heart { display:inline-block; animation:beat 1.15s infinite; transform-origin:center; }
+  @keyframes beat { 50% { transform:scale(1.18); } }
+  section { margin-top:22px; padding:27px; background:#ffffffd9; border:1px solid #ffe0e9; border-radius:24px; box-shadow:0 10px 30px #b64b7010; }
+  h2 { margin:0 0 14px; color:#cf4778; font-size:1.5rem; }
+  .shayari { font-size:1.12rem; line-height:2; text-align:center; white-space:pre-line; }
+  .note { line-height:1.85; font-size:1.04rem; }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:12px; }
+  .card { padding:18px; border-radius:18px; background:#fff2f7; border:1px solid #ffd5e3; }
+  .card b { display:block; margin-bottom:7px; color:#c63e70; }
+  .actions { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:22px; }
+  button { cursor:pointer; border:0; border-radius:999px; padding:13px 20px; font-size:1rem; font-weight:700; transition:transform .2s,box-shadow .2s; }
+  button:hover { transform:translateY(-2px); box-shadow:0 8px 20px #d9437830; }
+  .primary { color:white; background:linear-gradient(135deg,#ff6597,#e7477d); }
+  .secondary { color:#b63d69; background:#ffe3ed; }
+  #message { margin-top:18px; min-height:28px; text-align:center; font-weight:700; color:#c63e70; line-height:1.7; }
+  footer { text-align:center; padding:28px 10px 0; color:#a65c78; font-size:.92rem; }
+  .signature { font-family:Georgia,serif; font-style:italic; font-size:1.2rem; }
+  @media(max-width:520px) { .hero{padding:32px 17px}.hero section,section{padding:21px}.shayari{font-size:1rem} }
+</style>
+</head>
+<body>
+<div class="floaties" id="floaties" aria-hidden="true"></div>
+<main>
+  <header class="hero">
+    <span class="eyebrow">A small note from my heart</span>
+    <h1>I'm Sorry <span class="heart">💗</span></h1>
+    <p class="subtitle">Hey love, I know I may have hurt you, and I'm truly sorry. You matter to me more than my pride, and I want to listen, understand, and do better—not just say the words.</p>
+    <div class="actions">
+      <button class="primary" onclick="showMessage()">Open my little apology 💌</button>
+      <button class="secondary" onclick="makeHearts()">Send a few hearts 💕</button>
+    </div>
+    <div id="message" aria-live="polite"></div>
+  </header>
+
+  <section>
+    <h2>🌷 A little shayari for you</h2>
+    <div class="shayari">Galti hui hai mujhse, ise maan raha hoon,
+Teri khamoshi ka dard pehchaan raha hoon.
+Maafi sirf lafzon se nahi, apne kaam se maangunga,
+Tujhe samajhne ki koshish har din badhaunga. 💗</div>
+  </section>
+
+  <section>
+    <h2>💌 From my heart</h2>
+    <p class="note">I'm sorry for the way things turned out and for my part in hurting you. I don't want to dismiss your feelings or rush you into forgiving me. You deserve honesty, patience, and respect. I'll listen to what upset you, take responsibility for my actions, and work on making things better. You don't have to reply before you're ready.</p>
+    <p class="signature">With care, always 💕</p>
+  </section>
+
+  <section>
+    <h2>✨ Three promises I want to keep</h2>
+    <div class="cards">
+      <div class="card"><b>👂 I will listen</b>I want to understand how you feel without interrupting or making excuses.</div>
+      <div class="card"><b>🤍 I will take responsibility</b>I won't treat “sorry” like a magic word; I'll show you through my actions.</div>
+      <div class="card"><b>🌱 I will keep growing</b>I'll try to learn from this and not repeat what hurt you.</div>
+    </div>
+  </section>
+
+  <section style="text-align:center">
+    <h2>💗 No pressure, just honesty</h2>
+    <p class="note">You don't owe me an instant reply or forgiveness. Whenever you're ready, I'd like to hear you out and make things right, if you're comfortable with that.</p>
+    <div class="actions">
+      <button class="primary" onclick="showFinal()">One last thing…</button>
+    </div>
+    <div id="finalMessage" class="note" aria-live="polite"></div>
+  </section>
+  <footer>Made with sincerity, a little courage, and lots of 💗<br><span>Tip: personalize this page with her name and the specific thing you're apologizing for.</span></footer>
+</main>
+<script>
+  const floaties = document.getElementById('floaties');
+  const symbols = ['💗','💕','🌸','♡','✨'];
+  for (let i=0;i<18;i++) {
+    const el=document.createElement('span');
+    el.textContent=symbols[i%symbols.length];
+    el.style.left=(Math.random()*100)+'%';
+    el.style.animationDuration=(9+Math.random()*11)+'s';
+    el.style.animationDelay=(-Math.random()*18)+'s';
+    floaties.appendChild(el);
+  }
+  function showMessage() {
+    document.getElementById('message').textContent =
+      "I'm not asking you to forget what happened. I'm asking for a chance to listen, learn, and show you that I mean this apology. 💌";
+  }
+  function makeHearts() {
+    for (let i=0;i<14;i++) {
+      const el=document.createElement('span');
+      el.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+      el.style.cssText=`position:fixed;left:${Math.random()*100}%;top:${65+Math.random()*25}%;font-size:${18+Math.random()*22}px;z-index:5;pointer-events:none;transition:transform 2.2s ease,opacity 2.2s ease;`;
+      document.body.appendChild(el);
+      requestAnimationFrame(()=>{el.style.transform=`translateY(-${180+Math.random()*260}px) rotate(${Math.random()*70-35}deg)`;el.style.opacity='0';});
+      setTimeout(()=>el.remove(),2300);
+    }
+  }
+  function showFinal() {
+    document.getElementById('finalMessage').textContent =
+      "You mean a lot to me. I'm sorry, and I'm ready to hear you whenever you feel comfortable. 💗";
+  }
+</script>
+</body>
+</html>
